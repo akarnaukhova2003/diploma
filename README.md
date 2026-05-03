@@ -8,15 +8,8 @@
   -i, --input   Входной CSV-файл (обязательно, должен содержать колонку "Host")
   -o, --output  Выходной CSV-файл (по умолчанию: hosts_lineage_rank.csv)
 ```
-* get_orfs.py
-```
-Скрипт извлекает координаты ORF из GenBank-файлов.
-Аргументы:
-  -input, --input_file       Входной GenBank файл (обязательно)
-  -orf_map, --orf_map_file   CSV-файл соответствий названий ORF (обязательно)
-  -r, --remove_exceptions    Исключить записи из списка exceptions
-```
- * split_genome_and_reverse.py
+* get_orfs.py заимствован у коллег: https://github.com/v-julia/GenAlignment/blob/master/get_orfs.py
+* split_genome_and_reverse.py
 ```
 Скрипт разбивает геномы из FASTA на ORF-последовательности по координатам, если встречает '-' цепь, то последовательность реверс-комплементируется.
 Аргументы:
@@ -33,17 +26,8 @@
   -m, --min-len   Минимальная длина последовательности (обязательно)
       --max-len   Максимальная длина (необязательно)
 ```
-* resolve_ambiguous_mac.py
-```
-Скрипт обрабатывает FASTA с вырожденными нуклеотидами: фильтрует последовательности, извлекает проблемные участки и выполняет локальный BLAST.
-Аргументы:
-  -input, --input_file   Входной FASTA (обязательно)
-  -pb, --path_blast      Путь к BLAST (обязательно)
-  -pout, --path_out      Директория вывода
-  -w, --window           Размер окна (по умолчанию 100)
-  -evalue                E-value для BLAST (по умолчанию: 1e-20)
-  -word_size             Word size для BLAST (по умолчанию: 7)
-```
+
+* resolve_ambiguous_mac.py заимствован у коллег: https://github.com/v-julia/resolve_ambiguous/blob/master/resolve_ambiguous.py
 * extract_fasta_from_treefile.py
 ```
 Скрипт извлекает последовательности из FASTA на основе цвета кластеров в дереве.
@@ -56,13 +40,7 @@
   --out_fasta   Выходной FASTA
 ```
 
-* join_al.py
-```
-Скрипт объединяет несколько выравниваний FASTA в одно общее выравнивание.
-Аргументы:
-  --input_list   Список файлов выравниваний через запятую (обязательно)
-  --out_name     Имя выходного файла (обязательно)
-```
+* join_al.py заимствован у коллег: https://github.com/v-julia/GenAlignment/blob/master/join_al.py
 
 ### Файлы (папка files)
 * Astroviridae_15102025.fasta (нуклеотидные последовательности семейства *Astroviridae*, полученные 15.10.2025
